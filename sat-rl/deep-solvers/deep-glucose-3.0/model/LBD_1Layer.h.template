@@ -1,0 +1,52 @@
+#ifndef Glucose_Model_h
+#define Glucose_Model_h
+
+#include <vector>
+
+#include "model/ModelHelper.h"
+
+namespace Glucose {{
+
+#define FEAT_SIZE {state_vbn_scale_shape_0}
+#define OUTPUT_SIZE  1
+
+//=================================================================================================
+// Model -- the model class:
+// Made from model file: {model_file_name}
+
+class Model {{
+    static const double state_vbn_scale               [];
+    static const double state_vbn_shift               [];
+    static const double state_vbn_effective_mean      [];
+    static const double state_vbn_effective_std       [];
+    static const double policy_layers_linear_0_weight [];
+    static const double policy_layers_linear_0_bias   [];
+public:
+    // n1 = input - self.effective_mean
+    // normed_input = n1 / (self.effective_std + double(np.finfo(np.float32).eps))
+    // outputs = normed_input*self.scale + self.shift
+    // outputs * policy_layers_linear_0_weight + bias
+    static inline std::vector<double> forward(const double input[]) {{
+        double n1, normed_input;
+        double layer_1_input[FEAT_SIZE];
+        double output[OUTPUT_SIZE];
+
+        // double eps = std::numeric_limits<double>::min();
+        double eps = 1.1920928955078125e-07;
+
+        for (int i=0; i < FEAT_SIZE; i++) {{
+            n1 = input[i] - state_vbn_effective_mean[i];
+            normed_input = n1 / (state_vbn_effective_std[i] + eps);
+            layer_1_input[i] = normed_input * state_vbn_scale[i] + state_vbn_shift[i];
+        }}
+
+        LAYER_1(layer_1_input, FEAT_SIZE, policy_layers_linear_0_weight, policy_layers_linear_0_bias, ModelHelper::no_op, output);
+
+        std::vector<double> ret(1);
+        ret[0] = ModelHelper::relu(output[0]); // lbd threshold
+        return ret;
+    }}
+}};
+
+}}
+#endif

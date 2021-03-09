@@ -1,0 +1,2 @@
+IntervalParam(name='action1', start=-3., stop=3.2, step=0.5)
+IntervalParam(name='bias1', start=-3., stop=3.2, step=0.5)

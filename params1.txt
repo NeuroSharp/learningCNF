@@ -1,0 +1,17 @@
+IntervalParam(name='lr_init', start=0.0001, stop=0.0006, step=0.0001)
+DiscreteParam(name='do_test', values=[False])
+DiscreteParam(name='test_every', values=[50000000])
+DiscreteParam(name='non_linearity', values=['F.leaky_relu'])
+DiscreteParam(name='vemb_dim', values=[8, 16])
+DiscreteParam(name='cemb_dim', values=[16, 32, 64])
+DiscreteParam(name='policy_dim1', values=[32, 64, 128])
+DiscreteParam(name='policy_dim2', values=[8, 16, 32])
+DiscreteParam(name='use_bn', values=[True])
+# gamma [0.99, 0.999, 1]
+# entropy?
+# new/old rewards
+# decay [1, 0.999, 0.998] (just for example)
+# max iters [1,2,3]
+# min_timesteps_per_batch
+# grad_norm_clipping
+# regular and slim global state

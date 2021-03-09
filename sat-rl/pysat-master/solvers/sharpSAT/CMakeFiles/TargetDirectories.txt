@@ -1,0 +1,3 @@
+/home/gil/dev/CAL/learningCNF/sat-rl/pysat-master/solvers/sharpSAT/CMakeFiles/rebuild_cache.dir
+/home/gil/dev/CAL/learningCNF/sat-rl/pysat-master/solvers/sharpSAT/CMakeFiles/sharpSAT.dir
+/home/gil/dev/CAL/learningCNF/sat-rl/pysat-master/solvers/sharpSAT/CMakeFiles/edit_cache.dir

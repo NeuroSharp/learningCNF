@@ -1,0 +1,54 @@
+=== Per step information ===
+
+v <var> <const_value>
+uc <clause> <lit_or_zero>
+u+ <var>
+u- <var>
+s <nonnegative_value>,...,<nonnegative_value>
+d <var>,<decision_value>
+a <var>,<nonnegative_value>
+clause <clause> <learned> lits <lit> ... <lit>
+delete_clause <clause>
+conflict <var>
+
+Where:
+ - <var> is a variable ID
+ - <clause> is a clause ID
+ - <lit> is a either <var> or -<var>
+ - <lit_or_zero> is either <lit> or 0
+ - <const_value> is in {-1, 0, 1}
+ - <decision_value> is in {-1, 1}
+ - <nonnegative_value> is in [0, infty]
+ - <learned> indicates if the clause is learned or original
+
+
+
+=== Global information ===
+number of decisions
+number of conflicts, 
+number of restarts, 
+ratio of decisions to conflicts, 
+ratio of decisions to restarts, 
+number of successful propagations, 
+ratio of propagations to decisions, 
+number of propagations of constants, 
+ratio of propagations of constants to decisions, 
+number of propagations of pure variables, 
+ratio of propagations of pure variables to number of propagations, 
+number of propagations of pure variables that turned out to be constants, 
+ratio of pure constants to pure propagations, 
+number of local determinicity checks, 
+ratio of local determinicity checks to propagations (i.e. what fraction of propagations was successful), 
+number of local conflict checks, 
+number of global conflict checks, 
+ratio of local to global conflict checks, 
+ratio of conflicts to global conflict checks, 
+number of conflicts caused by constant propagations, 
+fraction of conflicts caused by constant propagations, 
+total length of learnt clauses, 
+average length of learnt clauses, 
+number of literals removed from learnt clauses in minimization step, 
+ratio of removed literals in learnt clauses, 
+number of case distinctions (only relevant if specific optimizations are active). 
+max_activity
+

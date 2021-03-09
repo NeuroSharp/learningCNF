@@ -1,0 +1,14 @@
+#include "model/Model.h"
+
+//=================================================================================================
+// Model -- the model class:
+// Made from model file: {model_file_name}
+
+using namespace Glucose;
+
+const double Model::state_vbn_scale               [] = {{ {state_vbn_scale} }};
+const double Model::state_vbn_shift               [] = {{ {state_vbn_shift} }};
+const double Model::state_vbn_effective_mean      [] = {{ {state_vbn_effective_mean} }};
+const double Model::state_vbn_effective_std       [] = {{ {state_vbn_effective_std} }};
+const double Model::policy_layers_linear_0_weight [] = {{ {policy_layers_linear_0_weight} }};
+const double Model::policy_layers_linear_0_bias   [] = {{ {policy_layers_linear_0_bias} }};
