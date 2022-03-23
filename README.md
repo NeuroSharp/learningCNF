@@ -2,6 +2,7 @@
 
 ## Running the code:
 Run the Docker container
+
 0. `docker run --rm -it modelcountanon/modelcount_v1:latest /bin/bash`
 
 From within the container:
